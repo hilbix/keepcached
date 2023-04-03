@@ -9,7 +9,7 @@ However this currently does not work as expected (by me).
 
 Currently following is performing much better:
 
-	keepcached() { while [ -f "$1" ] && printf . && ! read -t .5; do timeout 2 count -fb0 < "$1" >/dev/null; done; }
+	keepcached() { while [ -f "$1" ] && printf '\r' && ! read -t .5; do timeout 2 count -fb0 < "$1" >/dev/null; done; }
 
 > This probably needs `/bin/bash`
 

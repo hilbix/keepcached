@@ -9,7 +9,11 @@ However this currently does not work as expected (by me).
 
 Currently following is performing much better:
 
-	while sleep .5; do timeout 2 count -fb0 <$FILE >/dev/null; done
+	keepcached() { while [ -f "$1" ] && printf . && ! read -t .5; do timeout 2 count -fb0 < "$1" >/dev/null; done; }
 
-For `count` see <https://github.com/hilbix/count>
+> This probably needs `/bin/bash`
+
+For `count` see <https://github.com/hilbix/count>.
+
+You can use `/bin/cat` instead, but `count` outputs some additional statistics
 

@@ -1,3 +1,15 @@
-Das tut irgendwie nicht ganz das was es soll.
+[![keepcached Build Status](https://api.cirrus-ci.com/github/hilbix/keepcached.svg?branch=master)](https://cirrus-ci.com/github/hilbix/keepcached/master)
 
-Die Idee hinter diesem Programm ist, dafuer zu sorgen, dass eine Datei im Filecache bleibt, indem sie permanent gelesen wird.
+
+# keepcached
+
+The idea behind this is to keep a file cached in memory.
+
+However this currently does not work as expected (by me).
+
+Currently following is performing much better:
+
+	while sleep .5; do timeout 2 count -fb0 <$FILE >/dev/null
+
+For `count` see <https://github.com/hilbix/count>
+

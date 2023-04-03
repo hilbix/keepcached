@@ -9,7 +9,7 @@ However this currently does not work as expected (by me).
 
 Currently following is performing much better:
 
-	while sleep .5; do timeout 2 count -fb0 <$FILE >/dev/null
+	while sleep .5; do timeout 2 count -fb0 <$FILE >/dev/null; done
 
 For `count` see <https://github.com/hilbix/count>
 
